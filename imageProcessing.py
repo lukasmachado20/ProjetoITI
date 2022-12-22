@@ -25,7 +25,7 @@ def croped_Img_With_Threshold(imgArray:np.array, threshold:int=0) -> np.array:
             imgCroped -> numpy array
             * retorna a imagem cortada
     '''
-    # todos os valores maiores que 1000 irao receber 1, senao recebe 0
+    # todos os valores maiores que o threshold irao receber 1, senao recebe 0
     ret, temp1 = cv2.threshold(imgArray, threshold, np.max(imgArray), cv2.THRESH_BINARY)
     arrayThresh = temp1.astype('uint8')
 
