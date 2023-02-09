@@ -2,7 +2,15 @@ import os
 import time
 def download(file:str = None, folder:str = None) -> None:
     """
-    teste
+        * Funcao que baixa imagens DICOM do bucket da AWS para estudo em projeto de pesquisa
+
+        Parametros
+        ---------
+            file : str 
+                Nome do arquivo para baixar
+            
+            folder : str
+                Local da pasta onde o arquivo vai ser salvo
     
     """
     while not os.path.exists(folder+file):
@@ -16,6 +24,5 @@ def download(file:str = None, folder:str = None) -> None:
     #verificando
     if os.path.exists(folder+file): 
         print("Imagem {} EXISTE na pasta {}!\n".format(file,folder))
-        print("OK!! Imagem {} baixada na pasta {}!\n".format(file,folder))
     else:
-        print("Problema ao baixar Imagem {}...\n".format(file))
+        print("Imagem {} NÃO EXISTE na pasta {}!\n".format(file,folder))
